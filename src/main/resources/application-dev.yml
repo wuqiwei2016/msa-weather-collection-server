@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    data:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/miaosha?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 2
+      timeout: 1000
+  servlet:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  # 热部署
+  thymeleaf:
+    cache: false
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+# 分页配置
+pagehelper:
+  helper-dialect: postgresql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
